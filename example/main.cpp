@@ -16,35 +16,33 @@
  * =====================================================================================
  */
 #include <iostream>
+#include <vector>
 using namespace std;
 
-
-struct s
+struct SimpleStruct
 {
-    int a;
-    int b;
+    int i;
+    double d;
 };
 
-void func()
+struct ComplexStruct
 {
-    int* p = NULL;
-    *p = 10;
-}
-
-double bubble(double, double)
-{
-    return 0;
-}
-
-int bubble(int, int )
-{
-    return 0;
-}
+    struct SimpleStruct * ss_p;
+    int arr[10];
+};
 
 int main()
 {
-    struct s s1;
-    s1.a = 10;
-    func();
+    std::cout << "begin" << std::endl;
+    struct SimpleStruct ss = { 10, 1.11 };
+    struct ComplexStruct cs = { &ss, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } };   
+
+    std::vector<int> v;
+    for (int i = 0; i < 10; ++i)
+    {
+        v.push_back(i);
+    }
+
+    std::cout << "end" << std::endl;
     return 0;
 }    
