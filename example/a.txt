@@ -1,0 +1,4 @@
+break main
+
+break /Users/jieliu/Documents/gdb/example/main.cpp:37  if ss.arr != 0
+
