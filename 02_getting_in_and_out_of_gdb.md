@@ -32,8 +32,10 @@ gdb启动时的一些选项:
 **启动时选择文件**
 
 	-command file
-	-x file #Execute commands from file file. The contents of this file is evaluated exactly			 as the source command would.		
-			-eval-command command			 	
+	-x file #Execute commands from file file. The contents of this file is evaluated exactly
+			 as the source command would.		
+		
+	-eval-command command			 	
 	-ex command #Execute a single gdb command. 这个命令可能会重复使用多次（需要再查一下这个命令）
 	
 	
@@ -41,10 +43,15 @@ gdb启动时的一些选项:
 	-ix file  #Execute commands from file file before loading the inferior 
 			 (but after loading gdbinit files).
 			 
-		-init-eval-command command				 
+	
+	-init-eval-command command				 
 	-iex command #Execute a single gdb command before loading the inferior 
-					(but after loading gdbinit files)		-directory directory 	-d directory	#Add directory to the path to search for source and script files.
-	-r
+					(but after loading gdbinit files)
+	
+	-directory directory 
+	-d directory	#Add directory to the path to search for source and script files.
+
+	-r
 	-readnow 立刻读取全部符号表，默认是只在需要的时候才读取。这样启动的时候虽然慢，但是调试起来快。
 	
 	
@@ -52,7 +59,8 @@ gdb启动时的一些选项:
 	
 You can run gdb in various alternative modes—for example, in batch mode or quiet mode.
 
-	-nx	-n	Do not execute commands found in any initialization file. 
+	-nx
+	-n	Do not execute commands found in any initialization file. 
 		There are three init files, loaded in the following order:
 		
 		1. system.gdbinit 它的位置由 "-with-system-gdbinit"这个配置项设置. gdb启动首先读取这个文件。
@@ -83,10 +91,14 @@ You can run gdb in various alternative modes—for example, in batch mode or qui
 	
 	-l timeout 远程调试时指定超时时间。
 	
-	-tty device	-t device #Run using device for your program’s standard input and output.
-	-tui #Activate the Text User Interface when starting. 
+	-tty device
+	-t device #Run using device for your program’s standard input and output.
+
+	-tui #Activate the Text User Interface when starting. 
 		 The Text User Interface man- ages several text windows on the terminal, 
-		 showing source, assembly, regis- ters and gdb command outputs 	-interpreter interp # Use the interpreter interp 
+		 showing source, assembly, regis- ters and gdb command outputs 
+
+	-interpreter interp # Use the interpreter interp 
 		for interface with the controlling program or device. 
 		This option is meant to be set by programs 
 		which communicate with gdb using it as a back end.(这个还不知道是干嘛的，下来查一下)
@@ -117,12 +129,21 @@ You can run gdb in various alternative modes—for example, in batch mode or qui
 
 ##gdb退出
 	
-	quit [expression]	q
-	An interrupt 不会导致gdb退出，但是会终止当前正在运行的gdb命令回到命令输入界面
-	用detach可以结束attach
-## Shell Sommands	
-调试时如果想执行shell命令，不需要退出gdb.
-	!command-string #!和命令之间没有空格.					如果设置了环境变量SHELL，那么会调用SHELL指定的shell，否则用默认的
+	quit [expression]
+	q
+
+	An interrupt 不会导致gdb退出，但是会终止当前正在运行的gdb命令回到命令输入界面
+
+	用detach可以结束attach
+
+
+## Shell Commands	
+
+
+调试时如果想执行shell命令，不需要退出gdb.
+
+	!command-string #!和命令之间没有空格.
+					如果设置了环境变量SHELL，那么会调用SHELL指定的shell，否则用默认的
 
 
 ## Logging Output	
@@ -199,7 +220,9 @@ You can run gdb in various alternative modes—for example, in batch mode or qui
 	
 	
 	
-		
-
+	
+	
+
+
 
 
